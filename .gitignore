@@ -1,0 +1,8 @@
+# Wi-Fi and Telegram credentials
+firmware/condition_telegram/secrets.h
+
+# Arduino build artifacts
+*.bin
+*.elf
+*.map
+build/
