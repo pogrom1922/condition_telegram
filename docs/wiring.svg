@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="820" viewBox="0 0 1200 820">
+  <defs>
+    <style>
+      .t{font-family:Arial,Helvetica,sans-serif;fill:#17212b}.h{font-size:30px;font-weight:700}.s{font-size:20px}.sm{font-size:17px}.pin{font-size:18px;font-weight:700}.wire{fill:none;stroke-width:5;stroke-linecap:round;stroke-linejoin:round}.box{fill:#f7f9fb;stroke:#9aa7b2;stroke-width:2}.board{fill:#263746;stroke:#0e1821;stroke-width:3}.used{fill:#ffe58a;stroke:#9f7b00;stroke-width:2}.note{fill:#fff7d6;stroke:#c69b00;stroke-width:2}
+    </style>
+  </defs>
+
+  <rect width="1200" height="820" fill="white"/>
+  <text x="45" y="55" class="t h">ESP32-WROOM-32: ИК-пульт кондиционера</text>
+  <text x="45" y="88" class="t s">NodeMCU-32S, один TSAL6200, SS8050, TSOP4838</text>
+
+  <!-- Board -->
+  <rect x="55" y="130" width="400" height="585" rx="22" class="box"/>
+  <text x="85" y="170" class="t h">Распиновка платы</text>
+  <text x="85" y="200" class="t sm">Антенна сверху, USB снизу</text>
+
+  <rect x="155" y="235" width="200" height="390" rx="18" class="board"/>
+  <rect x="190" y="255" width="130" height="62" rx="6" fill="#c8d0d7"/>
+  <text x="207" y="292" class="t pin">ANTENNA</text>
+  <rect x="205" y="575" width="100" height="50" rx="5" fill="#c8d0d7"/>
+  <text x="228" y="607" class="t pin">USB</text>
+  <text x="190" y="370" font-family="Arial" font-size="22" font-weight="700" fill="white">ESP32</text>
+  <text x="174" y="398" font-family="Arial" font-size="18" fill="white">WROOM-32</text>
+
+  <!-- Used left-side pins approximate physical positions -->
+  <circle cx="142" cy="250" r="11" class="used"/><text x="75" y="257" class="t pin">3V3</text>
+  <circle cx="142" cy="420" r="11" class="used"/><text x="70" y="427" class="t pin">GPIO26</text>
+  <circle cx="142" cy="447" r="11" class="used"/><text x="70" y="454" class="t pin">GPIO27</text>
+  <circle cx="142" cy="528" r="11" class="used"/><text x="91" y="535" class="t pin">GND</text>
+  <circle cx="142" cy="598" r="11" class="used"/><text x="95" y="605" class="t pin">5V</text>
+
+  <text x="85" y="670" class="t sm">В проекте используются только:</text>
+  <text x="85" y="697" class="t pin">3V3, 5V, GND, GPIO26, GPIO27</text>
+
+  <!-- Circuit panel -->
+  <rect x="490" y="130" width="665" height="585" rx="22" class="box"/>
+  <text x="520" y="170" class="t h">Электрическая схема</text>
+
+  <!-- Sender -->
+  <text x="520" y="218" class="t pin">Передатчик</text>
+  <text x="520" y="265" class="t pin">5V</text>
+  <line x1="560" y1="258" x2="635" y2="258" class="wire" stroke="#d63b36"/>
+  <rect x="635" y="239" width="92" height="38" rx="6" fill="#f4d6a0" stroke="#8a632b" stroke-width="2"/>
+  <text x="652" y="265" class="t pin">33 Ω</text>
+  <line x1="727" y1="258" x2="790" y2="258" class="wire" stroke="#d63b36"/>
+
+  <!-- LED symbol -->
+  <polygon points="790,232 790,284 836,258" fill="none" stroke="#17212b" stroke-width="4"/>
+  <line x1="838" y1="230" x2="838" y2="286" stroke="#17212b" stroke-width="4"/>
+  <line x1="838" y1="258" x2="900" y2="258" class="wire" stroke="#d63b36"/>
+  <text x="775" y="312" class="t sm">TSAL6200</text>
+  <text x="770" y="334" class="t sm">анод + → катод −</text>
+
+  <!-- transistor -->
+  <circle cx="975" cy="330" r="55" fill="#eef2f5" stroke="#17212b" stroke-width="3"/>
+  <text x="936" y="336" class="t pin">SS8050</text>
+  <line x1="900" y1="258" x2="955" y2="292" class="wire" stroke="#d63b36"/>
+  <text x="916" y="275" class="t pin">C</text>
+  <line x1="975" y1="385" x2="975" y2="430" class="wire" stroke="#222"/>
+  <text x="989" y="414" class="t pin">E</text>
+  <line x1="975" y1="430" x2="975" y2="466" class="wire" stroke="#222"/>
+  <line x1="945" y1="466" x2="1005" y2="466" stroke="#222" stroke-width="4"/>
+  <line x1="954" y1="478" x2="996" y2="478" stroke="#222" stroke-width="4"/>
+  <line x1="965" y1="490" x2="985" y2="490" stroke="#222" stroke-width="4"/>
+  <text x="1018" y="472" class="t pin">GND</text>
+
+  <!-- Base -->
+  <text x="520" y="385" class="t pin">GPIO26</text>
+  <line x1="610" y1="378" x2="675" y2="378" class="wire" stroke="#2f76c5"/>
+  <rect x="675" y="359" width="105" height="38" rx="6" fill="#f4d6a0" stroke="#8a632b" stroke-width="2"/>
+  <text x="695" y="385" class="t pin">1 кΩ</text>
+  <line x1="780" y1="378" x2="920" y2="340" class="wire" stroke="#2f76c5"/>
+  <text x="900" y="365" class="t pin">B</text>
+
+  <!-- Receiver -->
+  <text x="520" y="535" class="t pin">Приёмник TSOP4838</text>
+  <rect x="715" y="512" width="130" height="110" rx="14" fill="#343a40"/>
+  <text x="735" y="552" font-family="Arial" font-size="18" font-weight="700" fill="white">TSOP4838</text>
+  <text x="730" y="580" font-family="Arial" font-size="15" fill="white">вид спереди</text>
+
+  <line x1="742" y1="622" x2="742" y2="660" class="wire" stroke="#2f76c5"/>
+  <line x1="780" y1="622" x2="780" y2="660" class="wire" stroke="#222"/>
+  <line x1="818" y1="622" x2="818" y2="660" class="wire" stroke="#d63b36"/>
+  <text x="715" y="690" class="t sm">1 OUT</text>
+  <text x="760" y="690" class="t sm">2 GND</text>
+  <text x="820" y="690" class="t sm">3 VS</text>
+
+  <text x="520" y="585" class="t pin">GPIO27</text><line x1="610" y1="578" x2="700" y2="640" class="wire" stroke="#2f76c5"/>
+  <text x="887" y="580" class="t pin">3.3V → pin 3</text>
+  <text x="887" y="610" class="t pin">GND → pin 2</text>
+  <text x="887" y="640" class="t pin">GPIO27 ← pin 1</text>
+  <text x="887" y="675" class="t sm">0.1 мкФ между pin 3 и pin 2</text>
+
+  <!-- Notes -->
+  <rect x="55" y="742" width="1100" height="55" rx="12" class="note"/>
+  <text x="75" y="776" class="t sm">Важно: у SS8050 подключай именно B/C/E по документации своего транзистора — физический порядок ножек у разных производителей может отличаться.</text>
+</svg>
