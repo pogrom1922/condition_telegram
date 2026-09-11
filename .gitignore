@@ -1,4 +1,10 @@
-# Wi-Fi and Telegram credentials
+# Windows Telegram bot credentials
+bot/config.py
+bot/.venv/
+bot/__pycache__/
+*.pyc
+
+# Old ESP32 credentials file, if it exists locally
 firmware/condition_telegram/secrets.h
 
 # Arduino build artifacts
